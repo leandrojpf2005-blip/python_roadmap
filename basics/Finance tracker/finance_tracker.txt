@@ -1,0 +1,13 @@
+Summary for Joana, Age 20
+============================
+Monthly Income: $80.00
+Monthly Expenses: $92.47
+Remaining Balance: $-12.47
+Warning: You are over budget!
+
+Expenses Breakdown: 
+Rent: $0.01 (0.01%)
+Food: $30.00 (37.50%)
+Transportation: $30.00 (37.50%)
+Entertainment: $0.01 (0.01%)
+Others: $32.45 (40.56%)
