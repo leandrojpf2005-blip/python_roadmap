@@ -128,7 +128,15 @@ data = [1, 2, 3, 4]
 # - Print "Empty list" if empty
 # - Print "Other list" otherwise
 
-#aaaaaaaaaaaaaaaaaaaaaaaaaa
+match data:
+    case [1, *rest]:
+        print('Starts with 1')
+    
+    case[]:
+        print('Empty list')
+
+    case _:
+        print('Other list')
 
 # ------------------
 # Exact List Match
@@ -139,7 +147,12 @@ data = [1, 2, 3]
 # Match exactly [1, 2, 3] and print "Exact match"
 # Otherwise print "Not exact"
 
+match data:
+    case [1, 2, 3]:
+        print('Exact match')
 
+    case _:
+        print('Not exact')
 # ------------------
 # Dictionary Matching
 # ------------------
@@ -151,6 +164,12 @@ person = {"name": "Ana", "age": 30}
 # print "{name} is {age} years old"
 # Otherwise print "Invalid structure"
 
+match person:
+    case {"name": name, "age": age}:
+        print(f'{name} is {age} years old')
+    
+    case _:
+        print('Invalid structure')
 
 # ------------------
 # Nested Pattern
@@ -163,6 +182,12 @@ event = ("click", {"x": 100, "y": 200})
 # print "Clicked at x, y"
 # Otherwise print "Unknown event"
 
+match event:
+    case ("click", {"x": x, "y": y}):
+        print(f'Clicked at {x}, {y}')
+    
+    case _:
+        print('Unknown event')
 
 # ------------------
 # Matching with Type Pattern
@@ -176,6 +201,15 @@ value = 42
 # - Print "String" if value is a str
 # - Print "Other type" otherwise
 
+match value:
+    case int():
+        print('Integer')
+
+    case str():
+        print('String')
+
+    case _:
+        print('Other type')
 
 # ------------------
 # Combined Pattern
@@ -190,6 +224,18 @@ point = (0, 5)
 # - Print "On X axis" if (x, 0)
 # - Print "Somewhere else" otherwise
 
+match point:
+    case (0, 0):
+        print('Origin')
+
+    case (0, y):
+        print('On Y axis')
+
+    case (x, 0):
+        print('On X axis')
+
+    case _:
+        print('Somewhere else')
 
 # ------------------
 # Wildcard and Unreachable Case Awareness
@@ -202,3 +248,13 @@ number = 2
 # - Prints "Even" if number is even
 # - Prints "Odd" if number is odd
 # Use guards
+
+match number:
+    case number if number %2 == 0:
+        print('Even')
+
+    case number if number %2 == 1:
+        print('Odd')
+
+    case _:
+        print('Unknown')
